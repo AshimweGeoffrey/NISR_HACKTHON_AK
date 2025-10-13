@@ -1,0 +1,354 @@
+.analytics-page {
+  background: var(--color-primary-50);
+  color: var(--color-primary-900);
+  min-height: 100vh;
+  padding: 64px clamp(16px, 4vw, 48px);
+  font-family: "Fira Code", monospace;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.analytics-header h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 8px;
+  letter-spacing: 4px;
+}
+
+.analytics-header p {
+  color: var(--color-primary-600);
+  font-size: 14px;
+}
+
+.header-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.header-stats .label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--color-primary-600);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.header-stats strong {
+  font-size: 22px;
+  color: var(--color-primary-700);
+}
+
+.analytics-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card-span-2 {
+  grid-column: span 2;
+}
+
+.card-span-3 {
+  grid-column: span 3;
+}
+
+.card-tall {
+  grid-row: span 2;
+}
+
+.analytics-page .card-analytics {
+  background: #ffffff;
+  border: 1px solid var(--color-primary-100);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 32px rgba(69, 93, 122, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.analytics-page .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.analytics-page .card-header h2 {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.analytics-page .card-header .metric-sub {
+  font-size: 12px;
+  color: var(--color-primary-600);
+}
+
+.analytics-page .indicator-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--color-primary-600);
+}
+
+.analytics-page .indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.analytics-page .indicator.users {
+  background: var(--color-secondary-400-400);
+}
+
+.analytics-page .indicator.new {
+  background: var(--color-primary-700);
+}
+
+.analytics-page .radial-chart {
+  height: 260px;
+}
+
+.analytics-page .radial-legend {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.analytics-page .radial-legend li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.analytics-page .radial-legend .radial-legend-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-primary-900);
+}
+
+.analytics-page .radial-legend .swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.analytics-page .radial-legend strong {
+  color: var(--color-primary-700);
+  font-size: 14px;
+}
+
+.analytics-page .heatmap-card {
+  grid-column: span 3;
+}
+
+.analytics-page .heatmap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.analytics-page .heatmap-days {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-primary-600);
+}
+
+.analytics-page .heatmap-days span:first-child {
+  height: 20px;
+}
+
+.analytics-page .heatmap-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+}
+
+.analytics-page .heatmap-hours {
+  display: grid;
+  grid-template-rows: repeat(23, 1fr);
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-primary-600);
+}
+
+.analytics-page .heatmap-cells {
+  display: grid;
+  gap: 6px;
+}
+
+.analytics-page .heatmap-row {
+  display: grid;
+  grid-template-columns: repeat(23, minmax(18px, 1fr));
+  gap: 6px;
+}
+
+.analytics-page .heatmap-row span {
+  display: block;
+  border-radius: 4px;
+  min-height: 20px;
+}
+
+.analytics-page .heatmap-legend {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--color-primary-600);
+}
+
+.analytics-page .heatmap-legend .legend-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-secondary-400-400) 20%, transparent),
+    var(--color-secondary-400-400)
+  );
+}
+
+.analytics-page .center-pie {
+  position: relative;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analytics-page .center-label {
+  position: absolute;
+  text-align: center;
+  color: var(--color-primary-700);
+}
+
+.analytics-page .center-label strong {
+  display: block;
+  font-size: 20px;
+}
+
+.analytics-page .center-label span {
+  font-size: 12px;
+  color: var(--color-primary-600);
+}
+
+.analytics-page .referral-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.analytics-page .referral-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.analytics-page .referral-list .swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.analytics-page .referral-list span {
+  color: var(--color-primary-600);
+}
+
+.analytics-page .tab-group {
+  display: inline-flex;
+  background: var(--color-primary-100);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 6px;
+}
+
+.analytics-page .tab-group button {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--color-primary-600);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.analytics-page .tab-group button.active,
+.analytics-page .tab-group button:hover {
+  background: var(--color-secondary-400-400);
+  color: #fff;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+  .analytics-page .analytics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .analytics-page .card-span-3,
+  .analytics-page .heatmap-card,
+  .analytics-page .span-2 {
+    grid-column: span 2;
+  }
+
+  .analytics-page .heatmap {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-page .heatmap-days {
+    display: none;
+  }
+
+  .analytics-page .heatmap-grid {
+    grid-template-columns: auto;
+  }
+
+  .analytics-page .heatmap-hours {
+    display: none;
+  }
+
+  .analytics-page .heatmap-row {
+    grid-template-columns: repeat(23, minmax(12px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .analytics-page .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-page .card-span-3,
+  .analytics-page .card-span-2,
+  .analytics-page .heatmap-card,
+  .analytics-page .span-2 {
+    grid-column: span 1;
+  }
+}

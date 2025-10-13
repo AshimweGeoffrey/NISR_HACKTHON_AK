@@ -26,7 +26,16 @@ function Navigation() {
             Hotspot Map
           </NavLink>
         </li>
-
+        <li>
+          <NavLink
+            to="/analytics"
+            className={({ isActive }) =>
+              `nav-link${isActive ? " nav-link-active" : ""}`
+            }
+          >
+            Analytics
+          </NavLink>
+        </li>
         <li>Causes + Solution</li>
         <li>Policies</li>
       </ul>

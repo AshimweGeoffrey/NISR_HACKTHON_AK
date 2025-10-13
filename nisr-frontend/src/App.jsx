@@ -4,6 +4,7 @@ import Navigation from "./components/navigation";
 import NisrHome from "./pages/nisrHome";
 import DynamicHotspot from "./pages/dynamicHotspot";
 import Footer from "./components/footer";
+import AnalyticsPage from "./pages/analytics";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<NisrHome />} />
             <Route path="/hotspot" element={<DynamicHotspot />} />
+            <Route path="/analytics" element={<AnalyticsPage />} />
           </Routes>
         </main>
 

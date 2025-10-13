@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap");
-@import "./styles.css"; /* import project color tokens */
+@import "../styles/styles.css"; /* import project color tokens */
 
 /* hero should at least fill the viewport vertically */
 .hero-full {
@@ -54,7 +54,7 @@
   background: var(--color-primary-100);
 }
 .stat-red {
-  background: var(--accent);
+  background-color: var(--color-secondary-400-400);
   color: #1b1b1b;
   padding: 22px;
 }
