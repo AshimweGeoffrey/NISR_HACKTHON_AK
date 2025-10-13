@@ -10,10 +10,14 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navigation />
-        <Routes>
-          <Route path="/" element={<NisrHome />} />
-          <Route path="/hotspot" element={<DynamicHotspot />} />
-        </Routes>
+
+        <main>
+          <Routes>
+            <Route path="/" element={<NisrHome />} />
+            <Route path="/hotspot" element={<DynamicHotspot />} />
+          </Routes>
+        </main>
+
         <Footer />
       </div>
     </BrowserRouter>

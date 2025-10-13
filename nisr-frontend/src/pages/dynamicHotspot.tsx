@@ -1,6 +1,5 @@
-import React from "react";
 import "../styles/dynamicHotspot.css";
-
+import RwandaMap from "../components/RwandaMap"; // Ensure the RwandaMap component is imported
 export default function DynamicHotspot() {
   return (
     <div className="dynamic-hotspot-page">
@@ -21,6 +20,9 @@ export default function DynamicHotspot() {
 
         <section className="dh-map-section">
           <h2 className="dh-map-title">Interactive Data driven Map</h2>
+          <div>
+            <RwandaMap />
+          </div>
         </section>
       </main>
     </div>
