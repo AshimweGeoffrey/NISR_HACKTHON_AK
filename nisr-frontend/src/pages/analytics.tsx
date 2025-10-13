@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "../styles/analytics.css";
 import {
   ResponsiveContainer,
@@ -27,6 +28,20 @@ const mutedGray = "var(--color-primary-200)";
 const primarySoft = "var(--color-primary-400)";
 const primaryLighter = "var(--color-primary-300)";
 const primaryPale = "var(--color-primary-100)";
+
+type RangeKey = "year" | "month" | "week";
+
+type CoveragePoint = {
+  period: string;
+  vitaminACoverage: number;
+  therapeuticFoodCoverage: number;
+};
+
+type AdmissionsPoint = {
+  period: string;
+  moderateCases: number;
+  severeCases: number;
+};
 
 const screeningBubbleData = [
   {
@@ -86,23 +101,69 @@ const supportChannelShare = [
   { name: "Community Groups", value: 12, fill: primaryPale },
 ];
 
-const coverageSeries = [
-  { month: "Jan", vitaminACoverage: 72, therapeuticFoodCoverage: 45 },
-  { month: "Feb", vitaminACoverage: 75, therapeuticFoodCoverage: 49 },
-  { month: "Mar", vitaminACoverage: 78, therapeuticFoodCoverage: 55 },
-  { month: "Apr", vitaminACoverage: 80, therapeuticFoodCoverage: 60 },
-  { month: "May", vitaminACoverage: 83, therapeuticFoodCoverage: 64 },
-  { month: "Jun", vitaminACoverage: 85, therapeuticFoodCoverage: 67 },
-];
+const coverageSeriesByRange: Record<RangeKey, CoveragePoint[]> = {
+  year: [
+    { period: "Jan", vitaminACoverage: 68, therapeuticFoodCoverage: 41 },
+    { period: "Feb", vitaminACoverage: 70, therapeuticFoodCoverage: 43 },
+    { period: "Mar", vitaminACoverage: 73, therapeuticFoodCoverage: 46 },
+    { period: "Apr", vitaminACoverage: 76, therapeuticFoodCoverage: 49 },
+    { period: "May", vitaminACoverage: 78, therapeuticFoodCoverage: 52 },
+    { period: "Jun", vitaminACoverage: 80, therapeuticFoodCoverage: 55 },
+    { period: "Jul", vitaminACoverage: 81, therapeuticFoodCoverage: 57 },
+    { period: "Aug", vitaminACoverage: 83, therapeuticFoodCoverage: 59 },
+    { period: "Sep", vitaminACoverage: 84, therapeuticFoodCoverage: 61 },
+    { period: "Oct", vitaminACoverage: 85, therapeuticFoodCoverage: 63 },
+    { period: "Nov", vitaminACoverage: 86, therapeuticFoodCoverage: 65 },
+    { period: "Dec", vitaminACoverage: 87, therapeuticFoodCoverage: 67 },
+  ],
+  month: [
+    { period: "Week 1", vitaminACoverage: 75, therapeuticFoodCoverage: 50 },
+    { period: "Week 2", vitaminACoverage: 77, therapeuticFoodCoverage: 52 },
+    { period: "Week 3", vitaminACoverage: 78, therapeuticFoodCoverage: 53 },
+    { period: "Week 4", vitaminACoverage: 79, therapeuticFoodCoverage: 54 },
+  ],
+  week: [
+    { period: "Mon", vitaminACoverage: 76, therapeuticFoodCoverage: 52 },
+    { period: "Tue", vitaminACoverage: 77, therapeuticFoodCoverage: 53 },
+    { period: "Wed", vitaminACoverage: 78, therapeuticFoodCoverage: 54 },
+    { period: "Thu", vitaminACoverage: 79, therapeuticFoodCoverage: 55 },
+    { period: "Fri", vitaminACoverage: 80, therapeuticFoodCoverage: 56 },
+    { period: "Sat", vitaminACoverage: 78, therapeuticFoodCoverage: 55 },
+    { period: "Sun", vitaminACoverage: 75, therapeuticFoodCoverage: 52 },
+  ],
+};
 
-const caseTrendSeries = [
-  { month: "Jan", moderateCases: 4100, severeCases: 1400 },
-  { month: "Feb", moderateCases: 4300, severeCases: 1600 },
-  { month: "Mar", moderateCases: 4700, severeCases: 1800 },
-  { month: "Apr", moderateCases: 4900, severeCases: 1750 },
-  { month: "May", moderateCases: 4600, severeCases: 1680 },
-  { month: "Jun", moderateCases: 4200, severeCases: 1580 },
-];
+const caseTrendSeriesByRange: Record<RangeKey, AdmissionsPoint[]> = {
+  year: [
+    { period: "Jan", moderateCases: 4300, severeCases: 1500 },
+    { period: "Feb", moderateCases: 4400, severeCases: 1550 },
+    { period: "Mar", moderateCases: 4500, severeCases: 1600 },
+    { period: "Apr", moderateCases: 4700, severeCases: 1650 },
+    { period: "May", moderateCases: 4800, severeCases: 1700 },
+    { period: "Jun", moderateCases: 5000, severeCases: 1750 },
+    { period: "Jul", moderateCases: 4900, severeCases: 1700 },
+    { period: "Aug", moderateCases: 4800, severeCases: 1650 },
+    { period: "Sep", moderateCases: 4600, severeCases: 1600 },
+    { period: "Oct", moderateCases: 4500, severeCases: 1550 },
+    { period: "Nov", moderateCases: 4400, severeCases: 1500 },
+    { period: "Dec", moderateCases: 4300, severeCases: 1450 },
+  ],
+  month: [
+    { period: "Week 1", moderateCases: 1200, severeCases: 410 },
+    { period: "Week 2", moderateCases: 1250, severeCases: 420 },
+    { period: "Week 3", moderateCases: 1300, severeCases: 430 },
+    { period: "Week 4", moderateCases: 1280, severeCases: 425 },
+  ],
+  week: [
+    { period: "Mon", moderateCases: 175, severeCases: 60 },
+    { period: "Tue", moderateCases: 180, severeCases: 62 },
+    { period: "Wed", moderateCases: 185, severeCases: 64 },
+    { period: "Thu", moderateCases: 190, severeCases: 65 },
+    { period: "Fri", moderateCases: 200, severeCases: 68 },
+    { period: "Sat", moderateCases: 185, severeCases: 63 },
+    { period: "Sun", moderateCases: 160, severeCases: 58 },
+  ],
+};
 
 const heatmapSlots = [
   "12am",
@@ -197,6 +258,23 @@ const axisStyle: Partial<XAxisProps & YAxisProps> = {
 };
 
 const AnalyticsPage = () => {
+  const [coverageRange, setCoverageRange] = useState<RangeKey>("year");
+  const [admissionsRange, setAdmissionsRange] = useState<RangeKey>("year");
+
+  const coverageSeries = coverageSeriesByRange[coverageRange];
+  const caseTrendSeries = caseTrendSeriesByRange[admissionsRange];
+
+  const admissionsMax =
+    caseTrendSeries.length > 0
+      ? Math.max(
+          ...caseTrendSeries.map(
+            (entry) => entry.moderateCases + entry.severeCases
+          )
+        )
+      : 0;
+  const admissionsDomain =
+    admissionsMax > 0 ? Math.ceil((admissionsMax + 100) / 100) * 100 : 100;
+
   return (
     <div className="analytics-page">
       <header className="analytics-header">
@@ -427,9 +505,27 @@ const AnalyticsPage = () => {
           <div className="card-header">
             <h2>Micronutrient coverage</h2>
             <div className="tab-group">
-              <button className="active">Year</button>
-              <button>Month</button>
-              <button>Week</button>
+              <button
+                className={coverageRange === "year" ? "active" : ""}
+                onClick={() => setCoverageRange("year")}
+                type="button"
+              >
+                Year
+              </button>
+              <button
+                className={coverageRange === "month" ? "active" : ""}
+                onClick={() => setCoverageRange("month")}
+                type="button"
+              >
+                Month
+              </button>
+              <button
+                className={coverageRange === "week" ? "active" : ""}
+                onClick={() => setCoverageRange("week")}
+                type="button"
+              >
+                Week
+              </button>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={260}>
@@ -441,7 +537,7 @@ const AnalyticsPage = () => {
                 strokeDasharray="3 3"
                 stroke="var(--color-primary-100)"
               />
-              <XAxis dataKey="month" {...axisStyle} />
+              <XAxis dataKey="period" {...axisStyle} />
               <YAxis
                 {...axisStyle}
                 domain={[0, 100]}
@@ -488,9 +584,27 @@ const AnalyticsPage = () => {
           <div className="card-header">
             <h2>Treatment admissions</h2>
             <div className="tab-group">
-              <button className="active">Year</button>
-              <button>Month</button>
-              <button>Week</button>
+              <button
+                className={admissionsRange === "year" ? "active" : ""}
+                onClick={() => setAdmissionsRange("year")}
+                type="button"
+              >
+                Year
+              </button>
+              <button
+                className={admissionsRange === "month" ? "active" : ""}
+                onClick={() => setAdmissionsRange("month")}
+                type="button"
+              >
+                Month
+              </button>
+              <button
+                className={admissionsRange === "week" ? "active" : ""}
+                onClick={() => setAdmissionsRange("week")}
+                type="button"
+              >
+                Week
+              </button>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={260}>
@@ -499,8 +613,12 @@ const AnalyticsPage = () => {
                 strokeDasharray="3 3"
                 stroke="var(--color-primary-100)"
               />
-              <XAxis dataKey="month" {...axisStyle} />
-              <YAxis {...axisStyle} domain={[0, 6000]} />
+              <XAxis dataKey="period" {...axisStyle} />
+              <YAxis
+                {...axisStyle}
+                domain={[0, admissionsDomain]}
+                tickFormatter={(value) => `${value.toLocaleString()}`}
+              />
               <Tooltip />
               <Bar
                 dataKey="moderateCases"
