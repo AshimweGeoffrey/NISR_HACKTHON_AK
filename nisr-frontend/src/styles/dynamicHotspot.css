@@ -1,0 +1,64 @@
+@import "./styles.css";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap");
+
+.dynamic-hotspot-page {
+  font-family: "Fira Code", monospace;
+  color: var(--color-primary-950);
+}
+
+.dh-main {
+  padding: 64px 24px;
+}
+.dh-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 0 24px 0;
+}
+.dh-title {
+  font-size: 56px;
+  letter-spacing: 6px;
+  margin: 48px 0 16px 0;
+}
+.dh-lead {
+  max-width: 900px;
+  margin: 0 auto 48px auto;
+  font-size: 18px;
+  color: var(--color-primary-800);
+}
+
+.dh-globe {
+  display: flex;
+  justify-content: center;
+  margin: 48px 0 80px 0;
+}
+
+.dh-globe {
+  border-radius: 12px;
+  border: 1px solid var(--color-primary-50);
+  width: min(680px, 95%);
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.dh-map-section {
+  padding: 48px 0 120px 0;
+  text-align: center;
+}
+.dh-map-title {
+  font-size: 48px;
+  margin-bottom: 36px;
+}
+
+@media (max-width: 900px) {
+  .globe-svg {
+    width: 420px;
+    height: 420px;
+  }
+  .dh-title {
+    font-size: 44px;
+  }
+}

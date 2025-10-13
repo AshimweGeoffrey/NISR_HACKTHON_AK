@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap");
+@import "./styles.css"; /* import project color tokens */
+
+/* hero should at least fill the viewport vertically */
+.hero-full {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* generic containers used by dashboard */
+.max-w-7xl {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.px-8 {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.py-16 {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* Hero cards */
+.hero-grid {
+  display: grid;
+  /* left column narrower for stats, right column for overview */
+  grid-template-columns: 420px 1fr;
+  gap: 150px;
+  align-items: start;
+}
+.card {
+  border-radius: 8px;
+  padding: 28px;
+}
+.card.large {
+  /* map to primary dark blue from project tokens */
+  background: var(--color-primary-800);
+  color: #fff;
+  min-height: 200px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card.big-num {
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--dark);
+}
+.stat-small {
+  background: var(--color-primary-100);
+}
+.stat-red {
+  background: var(--accent);
+  color: #1b1b1b;
+  padding: 22px;
+}
+
+/* small utilities used by dashboard */
+.muted-label {
+  font-size: 12px;
+  color: var(--color-secondary-100-500);
+  margin-bottom: 8px;
+}
+.stat-value-lg {
+  font-size: 64px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+.stat-value-md {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.stat-red .stat-value-md {
+  margin-bottom: 8px;
+}
+.stat-red .muted-label {
+  margin-top: 6px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Overview right column */
+.overview h1 {
+  font-size: 48px;
+  line-height: 1.02;
+  margin: 0 0 12px 0;
+}
+.overview .big-number {
+  font-size: 140px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Closing remarks */
+.closing-section {
+  background-color: var(--color-primary-400);
+}
+.closing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.btn-maps {
+  background: var(--color-primary-300);
+  color: var(--color-secondary-400-400);
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+}
+.btn-maps:hover {
+  background: var(--color-primary-950);
+}
+
+/* Business growth */
+.growth {
+  background: var(--color-secondary-400-100);
+  padding: 48px 32px;
+}
+.growth .bars {
+  display: flex;
+  gap: 20px;
+  align-items: stretch; /* allow .bar to fill the container so percent heights work */
+  height: 280px;
+}
+.growth .bar {
+  flex: 1;
+  background: var(--color-primary-100);
+  border-radius: 8px;
+  position: relative; /* allow absolute fill inside */
+  overflow: hidden;
+  height: 100%; /* ensure a defined height for percentage-based fills */
+}
+.growth .bar .col {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--accent);
+  display: flex;
+  align-items: flex-start; /* place text at top of fill so its vertical position matches the fill height */
+  justify-content: center;
+  border-radius: 0 0 8px 8px; /* rounded bottom corners only */
+  padding-top: 8px; /* small gap from top of the colored fill */
+  color: var(
+    --color-primary-950
+  ); /* use site's primary-950 token for bar text */
+  min-height: 6%; /* ensures the label remains visible for very small values */
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  z-index: 2;
+}
+.growth .bar span {
+  padding: 4px 8px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Quote and footer */
+.quote-section {
+  background: var(--color-secondary-100-100);
+}
+.quote {
+  padding: 28px;
+  border-radius: 4px;
+  text-align: center; /* center the quote text */
+  margin: 0 auto;
+  max-width: 900px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.quote-author {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.right-stacked {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+}
+.hero-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .hero-grid,
+  .closing-grid {
+    grid-template-columns: 1fr;
+  }
+  .overview .big-number {
+    font-size: 64px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .card.large {
+    min-height: 120px;
+  }
+}

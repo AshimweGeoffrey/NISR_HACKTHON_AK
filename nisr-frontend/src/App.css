@@ -1,42 +1,34 @@
+:root {
+  --bg: #eaf0f5;
+  --muted: #cfd9e1;
+  --accent: #f64f4f;
+  --dark: #0f172a;
+  --card-dark: #273241;
+  /* additional page-specific color tokens */
+  --card-primary: #3b4c5b; /* dark blue card */
+  --card-muted: #e6edf3; /* pale card background */
+  --growth-bg: #ffd5d8; /* growth section pink */
+  --btn-bg: #9aa9b6; /* maps button */
+  --muted-text: #8a96a0; /* small label text */
+}
+
+* {
+  box-sizing: border-box;
+}
+body,
+html,
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100%;
+  margin: 0;
+  font-family: "Fira Code", monospace;
+}
+.App {
+  background: var(--bg);
+  color: var(--dark);
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* avoid horizontal scroll when using full-bleed trick */
+body {
+  overflow-x: hidden;
 }

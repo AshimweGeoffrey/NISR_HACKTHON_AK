@@ -1,0 +1,35 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background: var(--color-primary-100, #d7dfe8);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  gap: 48px;
+  margin: 0;
+  padding: 0 24px;
+}
+
+.navigation li {
+  font-size: 14px;
+  font-family: "Fira Code", monospace;
+  font-weight: 500;
+  color: var(--color-primary-900, #263342);
+  cursor: pointer;
+  padding: 8px 6px;
+}
+
+.navigation li:hover {
+  color: var(--color-secondary-400-600, #e00808);
+}
+
+@media (max-width: 768px) {
+  .navigation ul {
+    gap: 20px;
+  }
+}
