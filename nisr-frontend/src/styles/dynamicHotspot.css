@@ -44,6 +44,100 @@
   }
 }
 
+/* style the decorative Map.svg to emphasize Rwanda and analytics */
+.dh-globe img {
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25)) saturate(0.95)
+    contrast(1.02);
+  transition: transform 220ms ease, filter 220ms ease;
+}
+.dh-globe img:hover {
+  transform: translateY(-4px) scale(1.02);
+  filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.32)) saturate(1.05)
+    contrast(1.06);
+}
+
+/* make the decorative image appear and behave like a control */
+.dh-globe img[role="button"] {
+  cursor: pointer;
+  outline: none;
+}
+.dh-globe img[role="button"]:focus {
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Hotspot widget styles */
+.hotspot-widget {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  font-family: inherit;
+}
+.hotspot-widget .hw-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-primary-950);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+.hotspot-widget .hw-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.12) inset;
+}
+.hotspot-widget .hw-count {
+  margin-left: 6px;
+  font-weight: 700;
+}
+.hotspot-widget .hw-panel {
+  margin-top: 10px;
+  width: 300px;
+  max-height: 360px;
+  background: var(--color-primary-800);
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  overflow: auto;
+  padding: 12px;
+  display: none;
+}
+.hotspot-widget.open .hw-panel {
+  display: block;
+}
+.hw-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.hw-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hw-item {
+  padding: 8px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.hw-item-title {
+  font-weight: 700;
+}
+.hw-item-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.hw-empty {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 8px;
+}
+
 .dh-map-section {
   padding: 48px 0 120px 0;
   text-align: center;

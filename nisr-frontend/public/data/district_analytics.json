@@ -1,0 +1,392 @@
+[
+  {
+    "District": "Nyabihu",
+    "Province": "Western",
+    "Stunting_Rate": 50.0,
+    "Wasting_Rate": 0.0,
+    "Underweight_Rate": 6.666666666666667,
+    "RiskScore": 30.67,
+    "Hotspot": "High",
+    "Recommendations": [
+      "Targeted nutrition education and supplementation.",
+      "Improve access to clean water and sanitation.",
+      "Support small-holder agriculture and diversification."
+    ]
+  },
+  {
+    "District": "Gicumbi",
+    "Province": "Northern",
+    "Stunting_Rate": 49.42528735632184,
+    "Wasting_Rate": 0.0,
+    "Underweight_Rate": 8.045977011494253,
+    "RiskScore": 30.46,
+    "Hotspot": "High",
+    "Recommendations": [
+      "Targeted nutrition education and supplementation.",
+      "Improve access to clean water and sanitation.",
+      "Support small-holder agriculture and diversification."
+    ]
+  },
+  {
+    "District": "Rutsiro",
+    "Province": "Western",
+    "Stunting_Rate": 45.614035087719294,
+    "Wasting_Rate": 8.771929824561402,
+    "Underweight_Rate": 26.31578947368421,
+    "RiskScore": 32.63,
+    "Hotspot": "High",
+    "Recommendations": [
+      "Targeted nutrition education and supplementation.",
+      "Improve access to clean water and sanitation.",
+      "Support small-holder agriculture and diversification."
+    ]
+  },
+  {
+    "District": "Gisagara",
+    "Province": "Southern",
+    "Stunting_Rate": 42.42424242424242,
+    "Wasting_Rate": 3.0303030303030303,
+    "Underweight_Rate": 13.636363636363637,
+    "RiskScore": 27.73,
+    "Hotspot": "High",
+    "Recommendations": [
+      "Targeted nutrition education and supplementation.",
+      "Improve access to clean water and sanitation.",
+      "Support small-holder agriculture and diversification."
+    ]
+  },
+  {
+    "District": "Karongi",
+    "Province": "Western",
+    "Stunting_Rate": 39.21568627450981,
+    "Wasting_Rate": 0.0,
+    "Underweight_Rate": 3.92156862745098,
+    "RiskScore": 23.92,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Musanze",
+    "Province": "Northern",
+    "Stunting_Rate": 38.88888888888889,
+    "Wasting_Rate": 2.7777777777777777,
+    "Underweight_Rate": 16.216216216216218,
+    "RiskScore": 25.79,
+    "Hotspot": "High",
+    "Recommendations": [
+      "Targeted nutrition education and supplementation.",
+      "Improve access to clean water and sanitation.",
+      "Support small-holder agriculture and diversification."
+    ]
+  },
+  {
+    "District": "Nyaruguru",
+    "Province": "Southern",
+    "Stunting_Rate": 38.88888888888889,
+    "Wasting_Rate": 0.0,
+    "Underweight_Rate": 16.666666666666664,
+    "RiskScore": 25.0,
+    "Hotspot": "High",
+    "Recommendations": [
+      "Targeted nutrition education and supplementation.",
+      "Improve access to clean water and sanitation.",
+      "Support small-holder agriculture and diversification."
+    ]
+  },
+  {
+    "District": "Gakenke",
+    "Province": "Northern",
+    "Stunting_Rate": 38.23529411764706,
+    "Wasting_Rate": 2.941176470588235,
+    "Underweight_Rate": 11.76470588235294,
+    "RiskScore": 25.0,
+    "Hotspot": "High",
+    "Recommendations": [
+      "Targeted nutrition education and supplementation.",
+      "Improve access to clean water and sanitation.",
+      "Support small-holder agriculture and diversification."
+    ]
+  },
+  {
+    "District": "Ngororero",
+    "Province": "Western",
+    "Stunting_Rate": 35.9375,
+    "Wasting_Rate": 3.125,
+    "Underweight_Rate": 13.846153846153848,
+    "RiskScore": 23.88,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Burera",
+    "Province": "Northern",
+    "Stunting_Rate": 34.78260869565217,
+    "Wasting_Rate": 10.869565217391305,
+    "Underweight_Rate": 19.565217391304348,
+    "RiskScore": 26.09,
+    "Hotspot": "High",
+    "Recommendations": [
+      "Targeted nutrition education and supplementation.",
+      "Improve access to clean water and sanitation.",
+      "Support small-holder agriculture and diversification."
+    ]
+  },
+  {
+    "District": "Ngoma",
+    "Province": "Eastern",
+    "Stunting_Rate": 34.0,
+    "Wasting_Rate": 2.0,
+    "Underweight_Rate": 10.0,
+    "RiskScore": 22.0,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Huye",
+    "Province": "Southern",
+    "Stunting_Rate": 31.818181818181817,
+    "Wasting_Rate": 6.8181818181818175,
+    "Underweight_Rate": 11.363636363636363,
+    "RiskScore": 22.27,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Rubavu",
+    "Province": "Western",
+    "Stunting_Rate": 29.03225806451613,
+    "Wasting_Rate": 0.0,
+    "Underweight_Rate": 11.11111111111111,
+    "RiskScore": 18.53,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Rulindo",
+    "Province": "Northern",
+    "Stunting_Rate": 28.78787878787879,
+    "Wasting_Rate": 0.0,
+    "Underweight_Rate": 4.545454545454546,
+    "RiskScore": 17.73,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Bugesera",
+    "Province": "Eastern",
+    "Stunting_Rate": 28.57142857142857,
+    "Wasting_Rate": 11.11111111111111,
+    "Underweight_Rate": 14.285714285714285,
+    "RiskScore": 21.9,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Kamonyi",
+    "Province": "Southern",
+    "Stunting_Rate": 28.205128205128204,
+    "Wasting_Rate": 5.128205128205128,
+    "Underweight_Rate": 10.256410256410255,
+    "RiskScore": 19.49,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Gatsibo",
+    "Province": "Eastern",
+    "Stunting_Rate": 27.41935483870968,
+    "Wasting_Rate": 4.838709677419355,
+    "Underweight_Rate": 12.903225806451612,
+    "RiskScore": 19.19,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Nyanza",
+    "Province": "Southern",
+    "Stunting_Rate": 26.31578947368421,
+    "Wasting_Rate": 3.508771929824561,
+    "Underweight_Rate": 14.035087719298245,
+    "RiskScore": 18.25,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Rwamagana",
+    "Province": "Eastern",
+    "Stunting_Rate": 25.806451612903224,
+    "Wasting_Rate": 4.838709677419355,
+    "Underweight_Rate": 3.125,
+    "RiskScore": 17.25,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Nyamagabe",
+    "Province": "Southern",
+    "Stunting_Rate": 24.390243902439025,
+    "Wasting_Rate": 2.4390243902439024,
+    "Underweight_Rate": 12.195121951219512,
+    "RiskScore": 16.59,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Nyagatare",
+    "Province": "Eastern",
+    "Stunting_Rate": 23.63636363636364,
+    "Wasting_Rate": 1.818181818181818,
+    "Underweight_Rate": 7.272727272727272,
+    "RiskScore": 15.45,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Kayonza",
+    "Province": "Eastern",
+    "Stunting_Rate": 23.52941176470588,
+    "Wasting_Rate": 3.92156862745098,
+    "Underweight_Rate": 5.88235294117647,
+    "RiskScore": 15.88,
+    "Hotspot": "Moderate",
+    "Recommendations": [
+      "Nutrition counselling and school feeding pilots.",
+      "Sanitation improvements and hygiene promotion."
+    ]
+  },
+  {
+    "District": "Kirehe",
+    "Province": "Eastern",
+    "Stunting_Rate": 21.568627450980397,
+    "Wasting_Rate": 1.96078431372549,
+    "Underweight_Rate": 5.88235294117647,
+    "RiskScore": 14.12,
+    "Hotspot": "Low",
+    "Recommendations": [
+      "Maintain preventive programs and monitoring."
+    ]
+  },
+  {
+    "District": "Muhanga",
+    "Province": "Southern",
+    "Stunting_Rate": 20.40816326530612,
+    "Wasting_Rate": 4.081632653061225,
+    "Underweight_Rate": 6.122448979591836,
+    "RiskScore": 14.08,
+    "Hotspot": "Low",
+    "Recommendations": [
+      "Maintain preventive programs and monitoring."
+    ]
+  },
+  {
+    "District": "Ruhango",
+    "Province": "Southern",
+    "Stunting_Rate": 18.867924528301888,
+    "Wasting_Rate": 0.0,
+    "Underweight_Rate": 3.7735849056603774,
+    "RiskScore": 11.7,
+    "Hotspot": "Low",
+    "Recommendations": [
+      "Maintain preventive programs and monitoring."
+    ]
+  },
+  {
+    "District": "Gasabo",
+    "Province": "Kigali city",
+    "Stunting_Rate": 15.492957746478872,
+    "Wasting_Rate": 4.225352112676056,
+    "Underweight_Rate": 5.633802816901409,
+    "RiskScore": 11.13,
+    "Hotspot": "Low",
+    "Recommendations": [
+      "Maintain preventive programs and monitoring."
+    ]
+  },
+  {
+    "District": "Rusizi",
+    "Province": "Western",
+    "Stunting_Rate": 14.035087719298245,
+    "Wasting_Rate": 3.508771929824561,
+    "Underweight_Rate": 5.263157894736842,
+    "RiskScore": 10.0,
+    "Hotspot": "Low",
+    "Recommendations": [
+      "Maintain preventive programs and monitoring."
+    ]
+  },
+  {
+    "District": "Nyarugenge",
+    "Province": "Kigali city",
+    "Stunting_Rate": 12.5,
+    "Wasting_Rate": 0.0,
+    "Underweight_Rate": 1.7857142857142856,
+    "RiskScore": 7.68,
+    "Hotspot": "Low",
+    "Recommendations": [
+      "Maintain preventive programs and monitoring."
+    ]
+  },
+  {
+    "District": "Nyamasheke",
+    "Province": "Western",
+    "Stunting_Rate": 10.714285714285714,
+    "Wasting_Rate": 0.0,
+    "Underweight_Rate": 5.357142857142857,
+    "RiskScore": 6.96,
+    "Hotspot": "Low",
+    "Recommendations": [
+      "Maintain preventive programs and monitoring."
+    ]
+  },
+  {
+    "District": "Kicukiro",
+    "Province": "Kigali city",
+    "Stunting_Rate": 4.651162790697675,
+    "Wasting_Rate": 2.3255813953488373,
+    "Underweight_Rate": 0.0,
+    "RiskScore": 3.49,
+    "Hotspot": "Low",
+    "Recommendations": [
+      "Maintain preventive programs and monitoring."
+    ]
+  }
+]

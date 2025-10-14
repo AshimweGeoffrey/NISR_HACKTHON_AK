@@ -1,0 +1,47 @@
+[
+  {
+    "Province": "Eastern",
+    "Summary": "Eastern has average stunting rate 26.36% and a risk score of 17.97. Priority: scale-up nutrition and WASH interventions in high-risk districts.",
+    "RecommendedActions": [
+      "Scale up community-based management of acute malnutrition.",
+      "Invest in maternal & child health services and growth monitoring.",
+      "Promote diversified agriculture and market access for nutritious foods."
+    ]
+  },
+  {
+    "Province": "Kigali city",
+    "Summary": "Kigali city has average stunting rate 10.88% and a risk score of 7.43. Priority: scale-up nutrition and WASH interventions in high-risk districts.",
+    "RecommendedActions": [
+      "Scale up community-based management of acute malnutrition.",
+      "Invest in maternal & child health services and growth monitoring.",
+      "Promote diversified agriculture and market access for nutritious foods."
+    ]
+  },
+  {
+    "Province": "Northern",
+    "Summary": "Northern has average stunting rate 38.02% and a risk score of 25.01. Priority: scale-up nutrition and WASH interventions in high-risk districts.",
+    "RecommendedActions": [
+      "Scale up community-based management of acute malnutrition.",
+      "Invest in maternal & child health services and growth monitoring.",
+      "Promote diversified agriculture and market access for nutritious foods."
+    ]
+  },
+  {
+    "Province": "Southern",
+    "Summary": "Southern has average stunting rate 28.91% and a risk score of 19.39. Priority: scale-up nutrition and WASH interventions in high-risk districts.",
+    "RecommendedActions": [
+      "Scale up community-based management of acute malnutrition.",
+      "Invest in maternal & child health services and growth monitoring.",
+      "Promote diversified agriculture and market access for nutritious foods."
+    ]
+  },
+  {
+    "Province": "Western",
+    "Summary": "Western has average stunting rate 32.08% and a risk score of 20.94. Priority: scale-up nutrition and WASH interventions in high-risk districts.",
+    "RecommendedActions": [
+      "Scale up community-based management of acute malnutrition.",
+      "Invest in maternal & child health services and growth monitoring.",
+      "Promote diversified agriculture and market access for nutritious foods."
+    ]
+  }
+]

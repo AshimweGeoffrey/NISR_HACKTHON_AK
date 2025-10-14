@@ -143,7 +143,7 @@
   width: 100%;
   background: var(--accent);
   display: flex;
-  align-items: flex-start; /* place text at top of fill so its vertical position matches the fill height */
+  align-items: center; /* center the label vertically within the colored fill */
   justify-content: center;
   border-radius: 0 0 8px 8px; /* rounded bottom corners only */
   padding-top: 8px; /* small gap from top of the colored fill */
@@ -157,8 +157,23 @@
 }
 .growth .bar span {
   padding: 4px 8px;
-  font-size: 28px;
+  font-size: 32px; /* increased size */
   line-height: 1;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* center and enlarge the province name under each bar */
+.growth .bar > div {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary-950);
+}
+
+/* toast used for downloads */
+#nisr-toast {
+  will-change: opacity, transform;
 }
 
 /* Quote and footer */

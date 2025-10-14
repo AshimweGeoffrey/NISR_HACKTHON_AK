@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function NisrDashboard() {
+  const [provinceSummary, setProvinceSummary] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch("/data/province_summary.json")
+      .then((r) => (r.ok ? r.json() : Promise.resolve([])))
+      .then((d) => setProvinceSummary(d))
+      .catch(() => setProvinceSummary([]));
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Navigation (kept minimal; component provides markup) */}
@@ -67,6 +76,20 @@ export default function NisrDashboard() {
               elit, sed do eiusmod tempor incididunt.
             </p>
             <div className="big-number">721M</div>
+            {/* Province summary mini widget */}
+            {provinceSummary.length > 0 && (
+              <div className="card mt-6">
+                <h4>Province summary (sample)</h4>
+                <ul>
+                  {provinceSummary.slice(0, 4).map((p: any) => (
+                    <li key={p.Province}>
+                      {p.Province}: Stunting {p.Stunting_Rate}% — Risk{" "}
+                      {p.RiskScore}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </section>

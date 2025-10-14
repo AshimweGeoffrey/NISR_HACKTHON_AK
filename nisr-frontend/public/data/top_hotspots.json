@@ -1,0 +1,116 @@
+{
+  "by_risk": [
+    {
+      "District": "Rutsiro",
+      "Province": "Western",
+      "RiskScore": 32.63157894736842,
+      "Hotspot": "High"
+    },
+    {
+      "District": "Nyabihu",
+      "Province": "Western",
+      "RiskScore": 30.666666666666668,
+      "Hotspot": "High"
+    },
+    {
+      "District": "Gicumbi",
+      "Province": "Northern",
+      "RiskScore": 30.45977011494253,
+      "Hotspot": "High"
+    },
+    {
+      "District": "Gisagara",
+      "Province": "Southern",
+      "RiskScore": 27.727272727272727,
+      "Hotspot": "High"
+    },
+    {
+      "District": "Burera",
+      "Province": "Northern",
+      "RiskScore": 26.086956521739125,
+      "Hotspot": "High"
+    },
+    {
+      "District": "Musanze",
+      "Province": "Northern",
+      "RiskScore": 25.78828828828829,
+      "Hotspot": "High"
+    },
+    {
+      "District": "Nyaruguru",
+      "Province": "Southern",
+      "RiskScore": 25.000000000000004,
+      "Hotspot": "High"
+    },
+    {
+      "District": "Gakenke",
+      "Province": "Northern",
+      "RiskScore": 25.0,
+      "Hotspot": "High"
+    },
+    {
+      "District": "Karongi",
+      "Province": "Western",
+      "RiskScore": 23.92156862745098,
+      "Hotspot": "Moderate"
+    },
+    {
+      "District": "Ngororero",
+      "Province": "Western",
+      "RiskScore": 23.884615384615387,
+      "Hotspot": "Moderate"
+    }
+  ],
+  "by_stunting": [
+    {
+      "District": "Nyabihu",
+      "Province": "Western",
+      "Stunting_Rate": 50.0
+    },
+    {
+      "District": "Gicumbi",
+      "Province": "Northern",
+      "Stunting_Rate": 49.42528735632184
+    },
+    {
+      "District": "Rutsiro",
+      "Province": "Western",
+      "Stunting_Rate": 45.614035087719294
+    },
+    {
+      "District": "Gisagara",
+      "Province": "Southern",
+      "Stunting_Rate": 42.42424242424242
+    },
+    {
+      "District": "Karongi",
+      "Province": "Western",
+      "Stunting_Rate": 39.21568627450981
+    },
+    {
+      "District": "Musanze",
+      "Province": "Northern",
+      "Stunting_Rate": 38.88888888888889
+    },
+    {
+      "District": "Nyaruguru",
+      "Province": "Southern",
+      "Stunting_Rate": 38.88888888888889
+    },
+    {
+      "District": "Gakenke",
+      "Province": "Northern",
+      "Stunting_Rate": 38.23529411764706
+    },
+    {
+      "District": "Ngororero",
+      "Province": "Western",
+      "Stunting_Rate": 35.9375
+    },
+    {
+      "District": "Burera",
+      "Province": "Northern",
+      "Stunting_Rate": 34.78260869565217
+    }
+  ]
+}
