@@ -1,21 +1,27 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Download, FileText, Eye, X, Trash2 } from 'lucide-react';
-import { PredictionResult } from '../types';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Download, FileText, Eye, X, Trash2 } from "lucide-react";
+import { PredictionResult } from "../types";
 
 interface ReportsProps {
   predictions: PredictionResult[];
-  onExport: (format: 'csv' | 'pdf') => void;
+  onExport: (format: "csv" | "pdf") => void;
   onDelete?: (id: string) => void;
 }
 
-export default function Reports({ predictions, onExport, onDelete }: ReportsProps) {
-  const [selectedReport, setSelectedReport] = useState<PredictionResult | null>(null);
-  const [sortField, setSortField] = useState<keyof PredictionResult>('date');
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+export default function Reports({
+  predictions,
+  onExport,
+  onDelete,
+}: ReportsProps) {
+  const [selectedReport, setSelectedReport] = useState<PredictionResult | null>(
+    null
+  );
+  const [sortField, setSortField] = useState<keyof PredictionResult>("date");
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
 
   const handleDelete = (id: string) => {
-    if (window.confirm('Are you sure you want to delete this prediction?')) {
+    if (window.confirm("Are you sure you want to delete this prediction?")) {
       onDelete?.(id);
       if (selectedReport?.id === id) {
         setSelectedReport(null);
@@ -27,17 +33,17 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
     const aValue = a[sortField];
     const bValue = b[sortField];
 
-    if (aValue < bValue) return sortOrder === 'asc' ? -1 : 1;
-    if (aValue > bValue) return sortOrder === 'asc' ? 1 : -1;
+    if (aValue < bValue) return sortOrder === "asc" ? -1 : 1;
+    if (aValue > bValue) return sortOrder === "asc" ? 1 : -1;
     return 0;
   });
 
   const handleSort = (field: keyof PredictionResult) => {
     if (sortField === field) {
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+      setSortOrder(sortOrder === "asc" ? "desc" : "asc");
     } else {
       setSortField(field);
-      setSortOrder('asc');
+      setSortOrder("asc");
     }
   };
 
@@ -45,16 +51,20 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-gray-800">Prediction Reports</h2>
-          <p className="text-gray-600 mt-1">View and export all prediction results</p>
+          <h2 className="text-2xl font-bold text-gray-800">
+            Prediction Reports
+          </h2>
+          <p className="text-gray-600 mt-1">
+            View and export all prediction results
+          </p>
         </div>
 
         <div className="flex gap-2">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => onExport('csv')}
-            className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+            onClick={() => onExport("csv")}
+            className="flex items-center gap-2 px-4 py-2 btn-primary rounded-lg hover:opacity-95 transition-colors"
           >
             <Download size={18} />
             Export CSV
@@ -62,8 +72,8 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => onExport('pdf')}
-            className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            onClick={() => onExport("pdf")}
+            className="flex items-center gap-2 px-4 py-2 bg-accent-red text-white rounded-lg hover:opacity-95 transition-colors"
           >
             <FileText size={18} />
             Export PDF
@@ -81,37 +91,37 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <th
-                  onClick={() => handleSort('id')}
+                  onClick={() => handleSort("id")}
                   className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                 >
                   ID
                 </th>
                 <th
-                  onClick={() => handleSort('childAge')}
+                  onClick={() => handleSort("childAge")}
                   className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                 >
                   Child Age
                 </th>
                 <th
-                  onClick={() => handleSort('region')}
+                  onClick={() => handleSort("region")}
                   className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                 >
                   Region
                 </th>
                 <th
-                  onClick={() => handleSort('riskCategory')}
+                  onClick={() => handleSort("riskCategory")}
                   className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                 >
                   Risk Category
                 </th>
                 <th
-                  onClick={() => handleSort('probability')}
+                  onClick={() => handleSort("probability")}
                   className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                 >
                   Probability
                 </th>
                 <th
-                  onClick={() => handleSort('date')}
+                  onClick={() => handleSort("date")}
                   className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                 >
                   Date
@@ -124,8 +134,12 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
             <tbody className="divide-y divide-gray-200">
               {sortedPredictions.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="px-6 py-12 text-center text-gray-500">
-                    No predictions yet. Create your first prediction to see results here.
+                  <td
+                    colSpan={7}
+                    className="px-6 py-12 text-center text-gray-500"
+                  >
+                    No predictions yet. Create your first prediction to see
+                    results here.
                   </td>
                 </tr>
               ) : (
@@ -142,15 +156,17 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
                     <td className="px-6 py-4 text-sm text-gray-900">
                       {prediction.childAge} months
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-900">{prediction.region}</td>
+                    <td className="px-6 py-4 text-sm text-gray-900">
+                      {prediction.region}
+                    </td>
                     <td className="px-6 py-4">
                       <span
                         className={`inline-flex px-3 py-1 rounded-full text-xs font-medium ${
-                          prediction.riskCategory === 'High'
-                            ? 'bg-red-100 text-red-700'
-                            : prediction.riskCategory === 'Medium'
-                            ? 'bg-yellow-100 text-yellow-700'
-                            : 'bg-green-100 text-green-700'
+                          prediction.riskCategory === "High"
+                            ? "bg-accent-red-50 text-accent-red"
+                            : prediction.riskCategory === "Medium"
+                            ? "bg-primary-50 text-primary-600"
+                            : "bg-primary-50 text-primary-600"
                         }`}
                       >
                         {prediction.riskCategory}
@@ -168,7 +184,7 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           onClick={() => setSelectedReport(prediction)}
-                          className="text-blue-600 hover:text-blue-800 transition-colors"
+                          className="text-primary-600 hover:text-primary-900 transition-colors"
                           title="View Details"
                         >
                           <Eye size={18} />
@@ -177,7 +193,7 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           onClick={() => handleDelete(prediction.id)}
-                          className="text-red-600 hover:text-red-800 transition-colors"
+                          className="text-accent-red hover:text-secondary-400-800 transition-colors"
                           title="Delete"
                         >
                           <Trash2 size={18} />
@@ -209,7 +225,9 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
               className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
             >
               <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
-                <h3 className="text-xl font-bold text-gray-800">Prediction Details</h3>
+                <h3 className="text-xl font-bold text-gray-800">
+                  Prediction Details
+                </h3>
                 <button
                   onClick={() => setSelectedReport(null)}
                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -220,16 +238,31 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
 
               <div className="p-6 space-y-6">
                 <div className="grid grid-cols-2 gap-4">
-                  <InfoItem label="Prediction ID" value={`#${selectedReport.id.slice(-6)}`} />
+                  <InfoItem
+                    label="Prediction ID"
+                    value={`#${selectedReport.id.slice(-6)}`}
+                  />
                   <InfoItem
                     label="Date"
                     value={new Date(selectedReport.date).toLocaleString()}
                   />
-                  <InfoItem label="Child Age" value={`${selectedReport.childAge} months`} />
+                  <InfoItem
+                    label="Child Age"
+                    value={`${selectedReport.childAge} months`}
+                  />
                   <InfoItem label="Region" value={selectedReport.region} />
-                  <InfoItem label="Risk Category" value={selectedReport.riskCategory} />
-                  <InfoItem label="Probability" value={`${selectedReport.probability}%`} />
-                  <InfoItem label="Confidence" value={`${selectedReport.confidence}%`} />
+                  <InfoItem
+                    label="Risk Category"
+                    value={selectedReport.riskCategory}
+                  />
+                  <InfoItem
+                    label="Probability"
+                    value={`${selectedReport.probability}%`}
+                  />
+                  <InfoItem
+                    label="Confidence"
+                    value={`${selectedReport.confidence}%`}
+                  />
                   <InfoItem
                     label="Education Level"
                     value={selectedReport.input.educationLevel}
@@ -237,7 +270,9 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
                 </div>
 
                 <div className="border-t border-gray-200 pt-4">
-                  <h4 className="font-semibold text-gray-800 mb-3">Input Parameters</h4>
+                  <h4 className="font-semibold text-gray-800 mb-3">
+                    Input Parameters
+                  </h4>
                   <div className="grid grid-cols-2 gap-4">
                     <InfoItem
                       label="Household Income"
@@ -262,9 +297,13 @@ export default function Reports({ predictions, onExport, onDelete }: ReportsProp
                   </div>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-blue-800 mb-2">Recommendations</h4>
-                  <p className="text-sm text-blue-700">{selectedReport.notes}</p>
+                <div className="bg-primary-50 border border-primary-200 rounded-lg p-4">
+                  <h4 className="font-semibold text-primary-600 mb-2">
+                    Recommendations
+                  </h4>
+                  <p className="text-sm text-primary-600">
+                    {selectedReport.notes}
+                  </p>
                 </div>
               </div>
             </motion.div>

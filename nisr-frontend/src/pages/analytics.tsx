@@ -426,7 +426,15 @@ const computeIndicatorMatrixFromSample = (sample: any[] | null) => {
     return heatPaletteFromFraction(t);
   };
 
-  return { provinces, rows, maxPct, getColor };
+  // compute sample counts per province (for UI badges)
+  const sampleCounts: number[] = provinces.map((pr) => {
+    if (!sample || !sample.length) return 0;
+    return sample.filter(
+      (r: any) => (r.S0_C_Prov || r.Province || "Unknown") === pr
+    ).length;
+  });
+
+  return { provinces, rows, maxPct, getColor, sampleCounts };
 };
 
 // Build a combined matrix that prefers province-level authoritative data
@@ -512,7 +520,16 @@ const computeCombinedMatrixFromData = (
     return heatPaletteFromFraction(t);
   };
 
-  return { provinces, rows, maxPct, getColor };
+  // compute sample counts per province (for UI badges)
+  const sampleCounts: number[] = provinces.map((pr) => {
+    if (!sample || !sample.length) return 0;
+    return sample.filter(
+      (r: any) => (r.S0_C_Prov || r.Province || "Unknown") === pr
+    ).length;
+  });
+
+  // return shape includes sampleCounts for UI; cast to any to satisfy TS in inline JSX usages
+  return { provinces, rows, maxPct, getColor, sampleCounts } as any;
 };
 
 const axisStyle: Partial<XAxisProps & YAxisProps> = {
@@ -911,7 +928,7 @@ const AnalyticsPage = () => {
                       <div
                         style={{ display: "flex", gap: 6, flexWrap: "wrap" }}
                       >
-                        {m.provinces.map((p: string) => (
+                        {m.provinces.map((p: string, idx: number) => (
                           <div
                             key={p}
                             style={{
@@ -919,9 +936,28 @@ const AnalyticsPage = () => {
                               textAlign: "center",
                               fontSize: 12,
                               fontWeight: 600,
+                              display: "flex",
+                              flexDirection: "column",
+                              alignItems: "center",
+                              gap: 4,
                             }}
                           >
-                            {p}
+                            <div>{p}</div>
+                            {m.sampleCounts && m.sampleCounts[idx] ? (
+                              <div
+                                style={{
+                                  fontSize: 11,
+                                  background: "var(--color-primary-50)",
+                                  padding: "2px 6px",
+                                  borderRadius: 12,
+                                  border: "1px solid var(--color-primary-100)",
+                                  color: "var(--color-primary-700)",
+                                }}
+                                title={`Sample size: ${m.sampleCounts[idx]}`}
+                              >
+                                n={m.sampleCounts[idx]}
+                              </div>
+                            ) : null}
                           </div>
                         ))}
                       </div>
