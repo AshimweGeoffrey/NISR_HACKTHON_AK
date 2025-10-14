@@ -429,6 +429,92 @@ const computeIndicatorMatrixFromSample = (sample: any[] | null) => {
   return { provinces, rows, maxPct, getColor };
 };
 
+// Build a combined matrix that prefers province-level authoritative data
+// (from `province_summary.json`) for basic nutrition indicators and appends
+// sample-derived food-security indicators (clearly labelled) when available.
+const computeCombinedMatrixFromData = (
+  provinceSummaryData: any[] | null,
+  sample: any[] | null
+) => {
+  // prefer provinceSummary for authoritative province list and base rates
+  const provinces =
+    Array.isArray(provinceSummaryData) && provinceSummaryData.length
+      ? provinceSummaryData.map((p: any) => p.Province)
+      : sample && sample.length
+      ? Array.from(
+          new Set(
+            sample.map((r: any) => r.S0_C_Prov || r.Province || "Unknown")
+          )
+        )
+      : [];
+
+  if (!provinces || !provinces.length) return null;
+
+  const rows: any[] = [];
+
+  // Add authoritative nutrition prevalence rows from provinceSummary if present
+  if (Array.isArray(provinceSummaryData) && provinceSummaryData.length) {
+    const lookup: Record<string, any> = {};
+    provinceSummaryData.forEach((p: any) => (lookup[p.Province] = p));
+
+    const stuntingValues = provinces.map((pr) => {
+      const v = lookup[pr] ? Number(lookup[pr].Stunting_Rate) || 0 : 0;
+      return { pct: Math.round(v), raw: v };
+    });
+    const wastingValues = provinces.map((pr) => {
+      const v = lookup[pr] ? Number(lookup[pr].Wasting_Rate) || 0 : 0;
+      return { pct: Math.round(v), raw: v };
+    });
+    const underweightValues = provinces.map((pr) => {
+      const v = lookup[pr] ? Number(lookup[pr].Underweight_Rate) || 0 : 0;
+      return { pct: Math.round(v), raw: v };
+    });
+
+    rows.push({
+      label: "Stunting prevalence (U5)",
+      unit: "%",
+      values: stuntingValues,
+    });
+    rows.push({
+      label: "Wasting prevalence (U5)",
+      unit: "%",
+      values: wastingValues,
+    });
+    rows.push({
+      label: "Underweight prevalence (U5)",
+      unit: "%",
+      values: underweightValues,
+    });
+  }
+
+  // If we have sample-derived indicators, append them but mark them clearly
+  const sampleMatrix = computeIndicatorMatrixFromSample(sample);
+  if (sampleMatrix && sampleMatrix.rows && sampleMatrix.rows.length) {
+    sampleMatrix.rows.forEach((r: any) => {
+      rows.push({
+        label: `${r.label} (sample)`,
+        unit: r.unit,
+        values: r.values,
+      });
+    });
+  }
+
+  if (!rows.length) return null;
+
+  // compute max pct for consistent color scaling
+  const maxPct = Math.max(
+    ...rows.flatMap((r) => r.values.map((v: any) => v.pct || 0)),
+    0
+  );
+  const getColor = (pct: number) => {
+    if (!pct) return "#ffffff00";
+    const t = Math.min(1, Math.max(0, pct / Math.max(100, maxPct)));
+    return heatPaletteFromFraction(t);
+  };
+
+  return { provinces, rows, maxPct, getColor };
+};
+
 const axisStyle: Partial<XAxisProps & YAxisProps> = {
   tickLine: false,
   axisLine: false,
@@ -780,9 +866,12 @@ const AnalyticsPage = () => {
             </span>
           </div>
           {/* Use sample-derived indicator matrix when available; otherwise keep the static demo heatmap */}
-          {childSample && computeIndicatorMatrixFromSample(childSample) ? (
+          {computeCombinedMatrixFromData(provinceSummary, childSample) ? (
             (() => {
-              const m = computeIndicatorMatrixFromSample(childSample)!;
+              const m = computeCombinedMatrixFromData(
+                provinceSummary,
+                childSample
+              )!;
               return (
                 <>
                   <div className="matrix-grid" style={{ padding: 6 }}>
