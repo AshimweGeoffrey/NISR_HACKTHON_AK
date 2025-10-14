@@ -363,22 +363,7 @@ const RwandaMap = () => {
                   <span className="property-name">Type:</span>{" "}
                   {selectedDistrict.properties.TYPE_2}
                 </div>
-                <div>
-                  <span className="property-name">Code:</span>{" "}
-                  {selectedDistrict.properties.CC_2}
-                </div>
-                <div>
-                  <span className="property-name">Country:</span>{" "}
-                  {selectedDistrict.properties.COUNTRY}
-                </div>
-                <div>
-                  <span className="property-name">HASC Code:</span>{" "}
-                  {selectedDistrict.properties.HASC_2}
-                </div>
-                <div>
-                  <span className="property-name">Global ID:</span>{" "}
-                  {selectedDistrict.properties.GID_2}
-                </div>
+                {/* removed verbose geo metadata (CC_2, COUNTRY, HASC_2, GID_2) per UX request */}
                 {/* Analytics block: non-intrusive, shows key metrics if available */}
                 {(selectedDistrict.properties.RiskScore ||
                   selectedDistrict.properties.Hotspot ||
