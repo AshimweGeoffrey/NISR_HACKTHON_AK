@@ -1,0 +1,70 @@
+RWANDA CFSVA 2021 - CHILD MALNUTRITION BY DISTRICT
+================================================================================
+
+NATIONAL SUMMARY
+--------------------------------------------------------------------------------
+Total Children: 1690
+Stunting Rate: 29.2%
+Wasting Rate: 3.0%
+Underweight Rate: 9.5%
+
+TOP 10 HIGHEST STUNTING DISTRICTS
+--------------------------------------------------------------------------------
+ 1. Nyabihu              (Western     ):  50.0% (30/60 children)
+ 2. Gicumbi              (Northern    ):  49.4% (43/87 children)
+ 3. Rutsiro              (Western     ):  45.6% (26/57 children)
+ 4. Gisagara             (Southern    ):  42.4% (28/66 children)
+ 5. Karongi              (Western     ):  39.2% (20/51 children)
+ 6. Musanze              (Northern    ):  38.9% (14/36 children)
+ 7. Nyaruguru            (Southern    ):  38.9% (21/54 children)
+ 8. Gakenke              (Northern    ):  38.2% (13/34 children)
+ 9. Ngororero            (Western     ):  35.9% (23/64 children)
+10. Burera               (Northern    ):  34.8% (16/46 children)
+
+
+TOP 10 LOWEST STUNTING DISTRICTS
+--------------------------------------------------------------------------------
+ 1. Nyagatare            (Eastern     ):  23.6% (13/55 children)
+ 2. Kayonza              (Eastern     ):  23.5% (12/51 children)
+ 3. Kirehe               (Eastern     ):  21.6% (11/51 children)
+ 4. Muhanga              (Southern    ):  20.4% (10/49 children)
+ 5. Ruhango              (Southern    ):  18.9% (10/53 children)
+ 6. Gasabo               (Kigali city ):  15.5% (11/71 children)
+ 7. Rusizi               (Western     ):  14.0% (8/57 children)
+ 8. Nyarugenge           (Kigali city ):  12.5% (7/56 children)
+ 9. Nyamasheke           (Western     ):  10.7% (6/56 children)
+10. Kicukiro             (Kigali city ):   4.7% (2/43 children)
+
+
+PROVINCIAL SUMMARY
+--------------------------------------------------------------------------------
+
+Eastern:
+  Children: 406
+  Stunting: 26.4%
+  Wasting: 4.6%
+  Underweight: 8.6%
+
+Kigali city:
+  Children: 175
+  Stunting: 11.8%
+  Wasting: 2.4%
+  Underweight: 2.9%
+
+Northern:
+  Children: 272
+  Stunting: 39.0%
+  Wasting: 2.6%
+  Underweight: 10.8%
+
+Southern:
+  Children: 415
+  Stunting: 29.5%
+  Wasting: 3.0%
+  Underweight: 11.2%
+
+Western:
+  Children: 422
+  Stunting: 32.2%
+  Wasting: 2.2%
+  Underweight: 10.6%

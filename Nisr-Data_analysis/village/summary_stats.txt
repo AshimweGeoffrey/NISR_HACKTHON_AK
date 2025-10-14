@@ -1,0 +1,10 @@
+total_villages: 900
+total_districts: 30
+total_provinces: 5
+urban_villages: 116
+rural_villages: 784
+urban_pct: 12.88888888888889
+rural_pct: 87.1111111111111
+variables: 164
+numeric_vars: 20
+categorical_vars: 144

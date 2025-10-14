@@ -49,13 +49,63 @@ const InfoControl = ({ district }) => {
 
     if (district) {
       const provinceName = provinceNameMap[district.NAME_1] || district.NAME_1;
+      // Show a compact analytics preview on hover when available
+      const risk =
+        district.RiskScore !== undefined && district.RiskScore !== null
+          ? Number(district.RiskScore).toFixed(1)
+          : null;
+      const hotspot = district.Hotspot || null;
+
       container.innerHTML = `<b>${district.NAME_2}</b><br>Province: ${provinceName}`;
+      if (risk) {
+        container.innerHTML +=
+          `<br><small>Risk: <strong>${risk}</strong>` +
+          (hotspot ? ` &middot; ${hotspot}` : "") +
+          `</small>`;
+      }
     } else {
       container.innerHTML = "";
     }
   }, [district]);
 
   return null;
+};
+
+// Small legend control that explains RiskScore color mapping
+const LegendControl = () => {
+  const map = useMap();
+
+  useEffect(() => {
+    const legend = L.control({ position: "bottomright" });
+
+    legend.onAdd = () => {
+      const div = L.DomUtil.create("div", "map-legend");
+      div.innerHTML = `
+        <div style="font-weight:600; margin-bottom:6px">Risk score</div>
+  <div><span style="display:inline-block;width:16px;height:12px;background:#b10026;margin-right:8px;"></span>Highest (>=40)</div>
+        <div><span style="display:inline-block;width:16px;height:12px;background:#e31a1c;margin-right:8px;"></span>High (25–39)</div>
+        <div><span style="display:inline-block;width:16px;height:12px;background:#fd8d3c;margin-right:8px;"></span>Moderate (15–24)</div>
+        <div><span style="display:inline-block;width:16px;height:12px;background:#31a354;margin-right:8px;"></span>Low (&lt;15)</div>
+      `;
+      return div;
+    };
+
+    legend.addTo(map);
+    return () => legend.remove();
+  }, [map]);
+
+  return null;
+};
+
+// Map a numeric RiskScore to a color used on the map
+const getColorForRisk = (score) => {
+  if (score === null || score === undefined || isNaN(Number(score)))
+    return "#cccccc";
+  const s = Number(score);
+  if (s >= 40) return "#b10026"; // deep red
+  if (s >= 25) return "#e31a1c"; // red
+  if (s >= 15) return "#fd8d3c"; // orange
+  return "#31a354"; // green
 };
 
 const RwandaMap = () => {
@@ -74,7 +124,68 @@ const RwandaMap = () => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
       })
-      .then((data) => setDistricts(data))
+      .then((data) => {
+        // if features already contain RiskScore values, use them as-is.
+        const hasRisk =
+          data &&
+          data.features &&
+          data.features.some(
+            (f) => f.properties && f.properties.RiskScore !== undefined
+          );
+
+        if (hasRisk) {
+          setDistricts(data);
+          return;
+        }
+
+        // Otherwise, try to enrich features by fetching the district analytics JSON
+        // and matching on district name (feature.properties.NAME_2 <-> analytics.District).
+        fetch("/data/district_analytics.json")
+          .then((r) => (r.ok ? r.json() : Promise.resolve([])))
+          .then((analytics) => {
+            try {
+              const lookup = {};
+              const normalize = (s) =>
+                (s || "").toString().trim().toLowerCase();
+              (analytics || []).forEach((d) => {
+                lookup[normalize(d.District)] = d;
+              });
+
+              const enriched = Object.assign({}, data);
+              if (enriched.features && Array.isArray(enriched.features)) {
+                enriched.features = enriched.features.map((f) => {
+                  const ft = Object.assign({}, f);
+                  const name = normalize(
+                    (ft.properties &&
+                      (ft.properties.NAME_2 || ft.properties.NAME_2)) ||
+                      (ft.properties && ft.properties.NAME_2)
+                  );
+                  const match = lookup[name];
+                  if (match) {
+                    ft.properties = Object.assign({}, ft.properties, {
+                      RiskScore: match.RiskScore,
+                      Hotspot: match.Hotspot,
+                      Stunting_Rate: match.Stunting_Rate,
+                      Wasting_Rate: match.Wasting_Rate,
+                      Underweight_Rate: match.Underweight_Rate,
+                      Recommendations: match.Recommendations,
+                    });
+                  }
+                  return ft;
+                });
+              }
+
+              setDistricts(enriched);
+            } catch (e) {
+              console.warn("Could not enrich districts with analytics:", e);
+              setDistricts(data);
+            }
+          })
+          .catch(() => {
+            // analytics not available; still set raw data so map loads
+            setDistricts(data);
+          });
+      })
       .catch((error) => console.error("Error loading districts data:", error));
   }, []);
 
@@ -136,15 +247,14 @@ const RwandaMap = () => {
 
         // Add district to mini map
         const miniLayer = L.geoJSON(selectedDistrict, {
-          style: {
-            fillColor:
-              provinceColors[
-                provinceNameMap[selectedDistrict.properties.NAME_1] ||
-                  selectedDistrict.properties.NAME_1
-              ],
-            weight: 2,
-            color: "#444",
-            fillOpacity: 0.8,
+          style: () => {
+            const score = selectedDistrict.properties.RiskScore;
+            return {
+              fillColor: getColorForRisk(score),
+              weight: 2,
+              color: "#444",
+              fillOpacity: 0.9,
+            };
           },
         }).addTo(miniMap);
 
@@ -165,7 +275,11 @@ const RwandaMap = () => {
     const provinceName =
       provinceNameMap[feature.properties.NAME_1] || feature.properties.NAME_1;
     return {
-      fillColor: provinceColors[provinceName] || "#999",
+      // color by RiskScore when available, otherwise fall back to province color
+      fillColor:
+        (feature.properties && getColorForRisk(feature.properties.RiskScore)) ||
+        provinceColors[provinceName] ||
+        "#999",
       weight: 1.5,
       opacity: 1,
       color: "white",
@@ -219,6 +333,7 @@ const RwandaMap = () => {
         maxZoom={14}
       >
         <InfoControl district={hoveredDistrict} />
+        <LegendControl />
 
         {districts && (
           <GeoJSON
@@ -264,6 +379,55 @@ const RwandaMap = () => {
                   <span className="property-name">Global ID:</span>{" "}
                   {selectedDistrict.properties.GID_2}
                 </div>
+                {/* Analytics block: non-intrusive, shows key metrics if available */}
+                {(selectedDistrict.properties.RiskScore ||
+                  selectedDistrict.properties.Hotspot ||
+                  selectedDistrict.properties.Stunting_Rate) && (
+                  <div className="analytics-block" style={{ marginTop: 12 }}>
+                    <h4 style={{ margin: "6px 0" }}>Analytics</h4>
+                    <div>
+                      <strong>Risk Score:</strong>{" "}
+                      {selectedDistrict.properties.RiskScore
+                        ? Number(selectedDistrict.properties.RiskScore).toFixed(
+                            1
+                          )
+                        : "—"}
+                    </div>
+                    <div>
+                      <strong>Hotspot:</strong>{" "}
+                      {selectedDistrict.properties.Hotspot || "—"}
+                    </div>
+                    <div style={{ marginTop: 6 }}>
+                      <em>Rates</em>
+                      <div>
+                        Stunting:{" "}
+                        {selectedDistrict.properties.Stunting_Rate ?? "—"}%
+                      </div>
+                      <div>
+                        Wasting:{" "}
+                        {selectedDistrict.properties.Wasting_Rate ?? "—"}%
+                      </div>
+                      <div>
+                        Underweight:{" "}
+                        {selectedDistrict.properties.Underweight_Rate ?? "—"}%
+                      </div>
+                    </div>
+                    {Array.isArray(
+                      selectedDistrict.properties.Recommendations
+                    ) && (
+                      <div style={{ marginTop: 8 }}>
+                        <em>Recommendations</em>
+                        <ul style={{ margin: "6px 0 0 18px" }}>
+                          {selectedDistrict.properties.Recommendations.map(
+                            (r, i) => (
+                              <li key={i}>{r}</li>
+                            )
+                          )}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               <div className="district-map" ref={miniMapRef}></div>
             </div>

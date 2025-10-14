@@ -1,0 +1,40 @@
+
+Kigali city:
+  - Gasabo: 30 villages (15 rural, 15 urban)
+  - Kicukiro: 30 villages (6 rural, 24 urban)
+  - Nyarugenge: 30 villages (10 rural, 20 urban)
+
+Western:
+  - Karongi: 30 villages (28 rural, 2 urban)
+  - Ngororero: 30 villages (30 rural, 0 urban)
+  - Nyabihu: 30 villages (26 rural, 4 urban)
+  - Nyamasheke: 30 villages (30 rural, 0 urban)
+  - Rubavu: 30 villages (21 rural, 9 urban)
+  - Rusizi: 30 villages (24 rural, 6 urban)
+  - Rutsiro: 30 villages (29 rural, 1 urban)
+
+Southern:
+  - Gisagara: 30 villages (29 rural, 1 urban)
+  - Huye: 30 villages (27 rural, 3 urban)
+  - Kamonyi: 30 villages (28 rural, 2 urban)
+  - Muhanga: 30 villages (28 rural, 2 urban)
+  - Nyamagabe: 30 villages (29 rural, 1 urban)
+  - Nyanza: 30 villages (27 rural, 3 urban)
+  - Nyaruguru: 30 villages (29 rural, 1 urban)
+  - Ruhango: 30 villages (28 rural, 2 urban)
+
+Northern:
+  - Burera: 30 villages (29 rural, 1 urban)
+  - Gakenke: 30 villages (29 rural, 1 urban)
+  - Gicumbi: 30 villages (29 rural, 1 urban)
+  - Musanze: 30 villages (25 rural, 5 urban)
+  - Rulindo: 30 villages (29 rural, 1 urban)
+
+Eastern:
+  - Bugesera: 30 villages (28 rural, 2 urban)
+  - Gatsibo: 30 villages (29 rural, 1 urban)
+  - Kayonza: 30 villages (28 rural, 2 urban)
+  - Kirehe: 30 villages (30 rural, 0 urban)
+  - Ngoma: 30 villages (29 rural, 1 urban)
+  - Nyagatare: 30 villages (27 rural, 3 urban)
+  - Rwamagana: 30 villages (28 rural, 2 urban)

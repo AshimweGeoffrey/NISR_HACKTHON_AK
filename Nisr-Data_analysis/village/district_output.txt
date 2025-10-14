@@ -1,0 +1,243 @@
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:50: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  'Villages': df.groupby('S0_D_Dist').size(),
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:51: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  'Rural_Pct': (df[df['UrbanRural'] == 'Rural'].groupby('S0_D_Dist').size() /
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:52: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  df.groupby('S0_D_Dist').size() * 100)
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:56: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_summary['Province'] = df.groupby('S0_D_Dist')['S0_C_Prov'].first()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:69: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  'Districts': df.groupby('S0_C_Prov')['S0_D_Dist'].nunique(),
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:70: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  'Villages': df.groupby('S0_C_Prov').size(),
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:71: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  'Rural_Villages': df[df['UrbanRural'] == 'Rural'].groupby('S0_C_Prov').size(),
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:72: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  'Urban_Villages': df[df['UrbanRural'] == 'Urban'].groupby('S0_C_Prov').size()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+/home/micro/Nisr 2021 food security/Microdata/village/district_analysis_simple.py:99: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  district_profile[f'{col}_mean'] = df.groupby('S0_D_Dist')[col].mean()
+================================================================================
+RWANDA CFSVA 2021 - DISTRICT-BASED VILLAGE ANALYSIS
+================================================================================
+
+Dataset Overview:
+  Total villages: 900
+  Total districts: 30
+  Villages per district: 30
+  Total variables: 164
+
+================================================================================
+1. DISTRICT GEOGRAPHIC DISTRIBUTION
+================================================================================
+
+All 30 Districts:
+  Nyarugenge: 30 villages
+  Gasabo: 30 villages
+  Kicukiro: 30 villages
+  Nyanza: 30 villages
+  Gisagara: 30 villages
+  Nyaruguru: 30 villages
+  Huye: 30 villages
+  Nyamagabe: 30 villages
+  Ruhango: 30 villages
+  Muhanga: 30 villages
+  Kamonyi: 30 villages
+  Karongi: 30 villages
+  Rutsiro: 30 villages
+  Rubavu: 30 villages
+  Nyabihu: 30 villages
+  Ngororero: 30 villages
+  Rusizi: 30 villages
+  Nyamasheke: 30 villages
+  Rulindo: 30 villages
+  Gakenke: 30 villages
+  Musanze: 30 villages
+  Burera: 30 villages
+  Gicumbi: 30 villages
+  Rwamagana: 30 villages
+  Nyagatare: 30 villages
+  Gatsibo: 30 villages
+  Kayonza: 30 villages
+  Kirehe: 30 villages
+  Ngoma: 30 villages
+  Bugesera: 30 villages
+
+
+Urban/Rural Distribution by District:
+UrbanRural  Urban  Rural
+S0_D_Dist               
+Nyarugenge   66.7   33.3
+Gasabo       50.0   50.0
+Kicukiro     80.0   20.0
+Nyanza       10.0   90.0
+Gisagara      3.3   96.7
+Nyaruguru     3.3   96.7
+Huye         10.0   90.0
+Nyamagabe     3.3   96.7
+Ruhango       6.7   93.3
+Muhanga       6.7   93.3
+Kamonyi       6.7   93.3
+Karongi       6.7   93.3
+Rutsiro       3.3   96.7
+Rubavu       30.0   70.0
+Nyabihu      13.3   86.7
+Ngororero     0.0  100.0
+Rusizi       20.0   80.0
+Nyamasheke    0.0  100.0
+Rulindo       3.3   96.7
+Gakenke       3.3   96.7
+Musanze      16.7   83.3
+Burera        3.3   96.7
+Gicumbi       3.3   96.7
+Rwamagana     6.7   93.3
+Nyagatare    10.0   90.0
+Gatsibo       3.3   96.7
+Kayonza       6.7   93.3
+Kirehe        0.0  100.0
+Ngoma         3.3   96.7
+Bugesera      6.7   93.3
+
+================================================================================
+2. DISTRICT SUMMARY STATISTICS
+================================================================================
+
+District Summary:
+            Villages   Rural_Pct     Province
+S0_D_Dist                                    
+Nyarugenge        30   33.333333  Kigali city
+Gasabo            30   50.000000  Kigali city
+Kicukiro          30   20.000000  Kigali city
+Nyanza            30   90.000000     Southern
+Gisagara          30   96.666667     Southern
+Nyaruguru         30   96.666667     Southern
+Huye              30   90.000000     Southern
+Nyamagabe         30   96.666667     Southern
+Ruhango           30   93.333333     Southern
+Muhanga           30   93.333333     Southern
+Kamonyi           30   93.333333     Southern
+Nyamasheke        30  100.000000      Western
+Rusizi            30   80.000000      Western
+Ngororero         30  100.000000      Western
+Nyabihu           30   86.666667      Western
+Rubavu            30   70.000000      Western
+Rutsiro           30   96.666667      Western
+Karongi           30   93.333333      Western
+Rulindo           30   96.666667     Northern
+Gakenke           30   96.666667     Northern
+Musanze           30   83.333333     Northern
+Burera            30   96.666667     Northern
+Gicumbi           30   96.666667     Northern
+Rwamagana         30   93.333333      Eastern
+Nyagatare         30   90.000000      Eastern
+Gatsibo           30   96.666667      Eastern
+Kayonza           30   93.333333      Eastern
+Kirehe            30  100.000000      Eastern
+Ngoma             30   96.666667      Eastern
+Bugesera          30   93.333333      Eastern
+
+================================================================================
+3. PROVINCE-LEVEL SUMMARY
+================================================================================
+
+Province Overview:
+             Districts  Villages  Rural_Villages  Urban_Villages  Rural_Pct
+S0_C_Prov                                                                  
+Kigali city          3        90              31              59       34.4
+Southern             8       240             225              15       93.8
+Western              7       210             188              22       89.5
+Northern             5       150             141               9       94.0
+Eastern              7       210             199              11       94.8
+
+================================================================================
+4. AVAILABLE DATA BY DISTRICT
+================================================================================
+
+Total numeric variables: 20
+Sample variables: ['S0_B_DATE', 'S1_01', 'S1_01_2', 'S1_01_3', 'S1_01_4', 'S1_01_5', 'S1_01_6', 'S1_01_7', 'S2_01', 'S2_01_2']
+
+District profile created with 23 variables
+
+================================================================================
+5. CATEGORICAL VARIABLE PATTERNS
+================================================================================
+
+Total categorical variables: 144
+
+Key categorical patterns:
+
+S0_C_Prov (5 categories):
+  Total responses: 900
+
+UrbanRural (2 categories):
+  Total responses: 900
+
+S2_03_SMT_1 (2 categories):
+  Total responses: 900
+
+S2_03_SMT_2 (2 categories):
+  Total responses: 900
+
+S2_03_SMT_3 (2 categories):
+  Total responses: 900
+
+S2_03_SMT_4 (2 categories):
+  Total responses: 900
+
+S2_03_SMT_5 (2 categories):
+  Total responses: 900
+
+S2_03_SMT_6 (2 categories):
+  Total responses: 900
+
+================================================================================
+6. SAVING RESULTS
+================================================================================
+
+Files saved:
+  1. district_comprehensive_profile.csv - All district metrics
+  2. summary_stats.txt - Key statistics for report
+  3. district_by_province.txt - District lists organized by province
+
+================================================================================
+ANALYSIS COMPLETE!
+================================================================================
+
+Ready to generate comprehensive markdown report!

@@ -1,0 +1,328 @@
+================================================================================
+LOADING CHILD NUTRITION & MALNUTRITION DATA
+================================================================================
+
+Dataset loaded successfully!
+  Total children: 1690
+  Total variables: 134
+  Unique households: 1651
+
+================================================================================
+1. CHILD DEMOGRAPHIC PROFILE
+================================================================================
+
+AGE DISTRIBUTION:
+  Total children with age data: 1690
+  Mean age: 15.2 months
+  Median age: 15.3 months
+  Age range: 6 - 24 months
+
+Age Categories:
+  6-11 months: 544 children (32.2%)
+  12-17 months: 541 children (32.0%)
+  18-23 months: 605 children (35.8%)
+
+SEX DISTRIBUTION:
+  Male: 891 children (52.7%)
+  Female: 799 children (47.3%)
+
+GEOGRAPHIC DISTRIBUTION:
+  By Province:
+    Western: 422 children (25.0%)
+    Southern: 415 children (24.6%)
+    Eastern: 406 children (24.0%)
+    Northern: 272 children (16.1%)
+    Kigali city: 175 children (10.4%)
+
+  By Location:
+    Rural: 1477 children (87.4%)
+    Urban: 213 children (12.6%)
+
+================================================================================
+2. MALNUTRITION PREVALENCE
+================================================================================
+
+STUNTING (Height-for-Age):
+  Total children measured: 1643
+  Normal: 1164 children (70.8%)
+  Moderately stunted: 354 children (21.5%)
+  Severely stunted: 125 children (7.6%)
+
+  Height-for-Age Z-Score (HAZ):
+    Mean: -1.36
+    Median: -1.41
+    Range: -5.47 to 5.98
+
+WASTING (Weight-for-Height):
+  Total children measured: 1643
+  Normal: 1593 children (97.0%)
+  Moderately wasted: 36 children (2.2%)
+  Severely wasted: 14 children (0.9%)
+
+  Weight-for-Height Z-Score (WHZ):
+    Mean: 0.15
+    Median: 0.15
+    Range: -4.79 to 4.05
+
+UNDERWEIGHT (Weight-for-Age):
+  Total children measured: 1648
+  Normal: 1492 children (90.5%)
+  Moderately underweight: 115 children (7.0%)
+  Severely underweight: 41 children (2.5%)
+
+  Weight-for-Age Z-Score (WAZ):
+    Mean: -0.58
+    Median: -0.57
+    Range: -5.42 to 3.59
+
+EDEMA (Nutritional):
+  Total children checked: 1648
+  No: 1648 children (100.0%)
+
+MUAC (Mid-Upper Arm Circumference):
+  Total children measured: 1648
+  Mean MUAC: 147.3 mm
+  Median MUAC: 147.0 mm
+  Range: 96 - 190 mm
+
+  MUAC Categories:
+    Severe malnutrition (<115mm): 9 (0.5%)
+    Moderate malnutrition (115-125mm): 36 (2.2%)
+    Normal (>=125mm): 1603 (97.3%)
+
+================================================================================
+3. MALNUTRITION BY DEMOGRAPHICS
+================================================================================
+
+STUNTING BY PROVINCE:
+  Northern: 39.0% stunted
+  Western: 32.2% stunted
+  Southern: 29.5% stunted
+  Eastern: 26.4% stunted
+  Kigali city: 11.8% stunted
+
+WASTING BY PROVINCE:
+  Eastern: 4.6% wasted
+  Southern: 3.0% wasted
+  Northern: 2.6% wasted
+  Kigali city: 2.4% wasted
+  Western: 2.2% wasted
+
+MALNUTRITION BY LOCATION:
+
+  Stunting:
+    Urban: 14.4%
+    Rural: 31.3%
+
+  Wasting:
+    Urban: 2.4%
+    Rural: 3.1%
+
+  Underweight:
+    Urban: 5.7%
+    Rural: 10.0%
+
+MALNUTRITION BY AGE GROUP:
+
+  Stunting:
+    6-11 months: 22.4%
+    12-17 months: 29.3%
+    18-23 months: 35.1%
+
+  Wasting:
+    6-11 months: 4.7%
+    12-17 months: 2.9%
+    18-23 months: 1.7%
+
+  Underweight:
+    6-11 months: 10.5%
+    12-17 months: 9.7%
+    18-23 months: 8.3%
+
+MALNUTRITION BY SEX:
+
+  Stunting:
+    Male: 33.0%
+    Female: 24.8%
+
+  Wasting:
+    Male: 3.7%
+    Female: 2.3%
+
+  Underweight:
+    Male: 11.2%
+    Female: 7.6%
+
+================================================================================
+4. DIETARY DIVERSITY & FEEDING PRACTICES
+================================================================================
+
+MINIMUM DIETARY DIVERSITY (MDD):
+  Does not meet Min Diet Diversity: 975 children (57.7%)
+  Meets Min Diet Diversity: 715 children (42.3%)
+
+MINIMUM MEAL FREQUENCY (MMF):
+  Does not meet Min Meal Frequency: 1135 children (67.2%)
+  Meets Min Meal Frequency: 555 children (32.8%)
+
+MINIMUM ACCEPTABLE DIET (MAD):
+  Does not meet Min Acceptable Diet: 1361 children (80.5%)
+  Meets Min Acceptable Diet: 329 children (19.5%)
+
+MEAL FREQUENCY:
+  Meal frequency distribution:
+    No times: 157 children (9.5%)
+    Yes times: 261 children (15.8%)
+    2.0 times: 726 children (44.1%)
+    3.0 times: 424 children (25.7%)
+    4.0 times: 62 children (3.8%)
+    5.0 times: 9 children (0.5%)
+    6.0 times: 1 children (0.1%)
+    77.0 times: 8 children (0.5%)
+
+BREASTFEEDING:
+  Currently breastfeeding:
+    Yes: 1542 children (93.6%)
+    No: 106 children (6.4%)
+
+  Ever breastfed:
+    Yes: 99 children (93.4%)
+    No: 7 children (6.6%)
+
+================================================================================
+5. FOOD GROUP CONSUMPTION (LAST 24 HOURS)
+================================================================================
+
+FOOD GROUP CONSUMPTION RATES:
+  Grains/Cereals (porridge, bread, rice): 0.0%
+  White potatoes/tubers: 0.0%
+  Legumes and nuts: 0.0%
+  Milk/cheese/yogurt: 0.0%
+  Organ meat (liver, kidney): 0.0%
+  Meat (beef, pork, lamb, chicken): 0.0%
+  Fish (fresh or dried): 0.0%
+  Eggs: 0.0%
+  Vitamin A rich vegetables: 0.0%
+  Dark green leafy vegetables: 0.0%
+  Ripe fruits (mangoes, papaya): 0.0%
+  Other fruits/vegetables: 0.0%
+
+================================================================================
+6. CHILD HEALTH & ILLNESS (LAST 2 WEEKS)
+================================================================================
+
+ILLNESS PREVALENCE:
+  Fever: 0 children (0.0%)
+  Cough: 0 children (0.0%)
+  Diarrhea: 0 children (0.0%)
+
+HEALTHCARE ACCESS:
+  Saw healthcare provider when sick:
+    Staff at health facility: 588 children (52.8%)
+    None: 319 children (28.6%)
+    Traditional: 85 children (7.6%)
+    Community health care worker: 78 children (7.0%)
+    Staff at Private hospital: 44 children (3.9%)
+
+PREVENTIVE HEALTH MEASURES:
+  Received Vitamin A (last 6 months): 0.0%
+  Received deworming (last 6 months): 0.0%
+  Slept under mosquito net: 0.0%
+  Hands washed before eating: 0.0%
+
+================================================================================
+7. MATERNAL CHARACTERISTICS
+================================================================================
+
+MOTHER'S EDUCATION:
+  Some/still primary: 625 (37.4%)
+  Completed primary: 419 (25.1%)
+  No school: 252 (15.1%)
+  Some/still secondary: 203 (12.2%)
+  Completed secondary: 116 (6.9%)
+  Completed university: 32 (1.9%)
+  Some/still university: 12 (0.7%)
+  Vocational school: 10 (0.6%)
+  Don't know: 1 (0.1%)
+
+MOTHER'S LITERACY:
+  Yes (both read and write): 1270 (76.0%)
+  No: 329 (19.7%)
+  Yes (read only): 71 (4.3%)
+
+MOTHER'S MARITAL STATUS:
+  Married: 970 (58.4%)
+  Partner: 313 (18.8%)
+  Never married (single): 283 (17.0%)
+  Separated: 47 (2.8%)
+  Divorced: 26 (1.6%)
+  Widow/Widower: 23 (1.4%)
+
+MOTHER'S DISABILITY:
+  No: 1619 (96.9%)
+  Yes: 51 (3.1%)
+
+================================================================================
+8. HOUSEHOLD SOCIOECONOMIC CONTEXT
+================================================================================
+
+FOOD SECURITY STATUS:
+  Marginally food secure : 708 households (41.9%)
+  Food secure: 643 households (38.0%)
+  Moderately food insecure: 312 households (18.5%)
+  Severely food insecure: 27 households (1.6%)
+
+WEALTH INDEX:
+  Wealth: 483 households (28.6%)
+  Poor: 375 households (22.2%)
+  Poorest: 302 households (17.9%)
+  Wealthiest: 271 households (16.0%)
+  Medium: 259 households (15.3%)
+
+INCOME QUINTILE:
+  Lowest: 349 households (20.7%)
+  Low: 300 households (17.8%)
+  Medium: 418 households (24.7%)
+  High: 256 households (15.1%)
+  Highest: 367 households (21.7%)
+
+FOOD CONSUMPTION SCORE (FCS):
+  Mean FCS: 47.1
+  Median FCS: 43.5
+  Range: 13 - 112
+
+  Food Consumption Groups:
+    Acceptable Consumption: 1286 households (76.1%)
+    Borderline Consumption: 360 households (21.3%)
+    Poor Consumption: 44 households (2.6%)
+
+================================================================================
+9. MALNUTRITION ASSOCIATIONS
+================================================================================
+
+STUNTING BY HOUSEHOLD FOOD SECURITY:
+  Food secure: 24.5% stunted
+  Marginally food secure : 30.1% stunted
+  Moderately food insecure: 37.0% stunted
+  Severely food insecure: 25.9% stunted
+
+STUNTING BY WEALTH INDEX:
+  Poorest: 38.6% stunted
+  Poor: 35.4% stunted
+  Medium: 26.2% stunted
+  Wealth: 28.5% stunted
+  Wealthiest: 14.0% stunted
+
+STUNTING BY DIETARY DIVERSITY:
+  Does not meet Min Diet Diversity: 30.3% stunted
+  Meets Min Diet Diversity: 27.6% stunted
+
+WASTING BY RECENT ILLNESS:
+  Had diarrhea=No: 2.8% wasted
+  Had diarrhea=Yes: 3.7% wasted
+
+================================================================================
+ANALYSIS COMPLETE!
+================================================================================
+
+Key insights generated. Ready for visualization and deeper analysis.
