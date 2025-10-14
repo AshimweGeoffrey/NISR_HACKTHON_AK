@@ -37,14 +37,23 @@ export default function DynamicHotspot() {
               title="Click to open interactive map"
               onClick={() => {
                 const el = document.getElementById("dh-map-section");
-                if (el)
-                  el.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (el) {
+                  // offset so the target sits lower in the viewport (~18% down)
+                  const rect = el.getBoundingClientRect();
+                  const offset = Math.round(window.innerHeight * 0.18);
+                  const top = window.scrollY + rect.top - offset;
+                  window.scrollTo({ top, behavior: "smooth" });
+                }
               }}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   const el = document.getElementById("dh-map-section");
-                  if (el)
-                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  if (el) {
+                    const rect = el.getBoundingClientRect();
+                    const offset = Math.round(window.innerHeight * 0.18);
+                    const top = window.scrollY + rect.top - offset;
+                    window.scrollTo({ top, behavior: "smooth" });
+                  }
                 }
               }}
             />
