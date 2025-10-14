@@ -68,6 +68,13 @@
 .btn-primary {
   background: var(--color-primary-600);
   color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
 }
 .btn-primary:hover {
   background: var(--color-primary-700);

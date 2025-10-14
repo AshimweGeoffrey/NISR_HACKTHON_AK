@@ -22,7 +22,6 @@ import {
   Users,
   Activity,
   MapPin,
-  DollarSign,
 } from "lucide-react";
 import { PredictionResult } from "../types";
 
@@ -36,15 +35,10 @@ const COLORS = {
   Low: "#10B981",
 };
 
-const CHART_COLORS = {
-  primary: "#10B981", // Green
-  secondary: "#14B8A6", // Teal
-  accent: "#06B6D4", // Cyan
-  gradient1: "#10B981",
-  gradient2: "#059669",
-};
+// chart color constants removed (not used)
 
 export default function Analysis({ predictions }: AnalysisProps) {
+  type LabelProps = { name?: string; percent?: number; category?: string };
   const riskCategoryData = [
     {
       name: "High",
@@ -442,9 +436,12 @@ export default function Analysis({ predictions }: AnalysisProps) {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ name, percent }) =>
-                    `${name}: ${(percent * 100).toFixed(0)}%`
-                  }
+                  label={(props: LabelProps) => {
+                    const name = props?.name ?? "";
+                    const percent =
+                      typeof props?.percent === "number" ? props!.percent : 0;
+                    return `${name}: ${(percent * 100).toFixed(0)}%`;
+                  }}
                   outerRadius={100}
                   fill="#8884d8"
                   dataKey="value"
@@ -789,14 +786,17 @@ export default function Analysis({ predictions }: AnalysisProps) {
                   cx="50%"
                   cy="50%"
                   labelLine={true}
-                  label={({ category, percent }) =>
-                    `${category}: ${(percent * 100).toFixed(0)}%`
-                  }
+                  label={(props: LabelProps) => {
+                    const category = props.category ?? "";
+                    const percent =
+                      typeof props.percent === "number" ? props.percent : 0;
+                    return `${category}: ${(percent * 100).toFixed(0)}%`;
+                  }}
                   outerRadius={100}
                   fill="#8884d8"
                   dataKey="count"
                 >
-                  {waterSanitationData.map((entry, index) => (
+                  {waterSanitationData.map((_, index) => (
                     <Cell
                       key={`cell-${index}`}
                       fill={["#10B981", "#3B82F6", "#F59E0B", "#EF4444"][index]}
