@@ -607,6 +607,29 @@ const AnalyticsPage = () => {
     },
   ];
 
+  // Try to surface SAM admissions and therapeutic completion from districtRates when available
+  const totalSamAdmissions = (districtRates || []).reduce(
+    (s: number, d: any) =>
+      s +
+      (Number(d.SAM_Admissions) || Number(d.SAM) || Number(d.Admissions) || 0),
+    0
+  );
+
+  const therapeuticCompletionPct =
+    districtRates && districtRates.length
+      ? Math.round(
+          (districtRates.reduce(
+            (s: number, d: any) =>
+              s +
+              (Number(d.Therapeutic_Completion) ||
+                Number(d.TherapeuticCompletion) ||
+                0),
+            0
+          ) /
+            districtRates.length) *
+            10
+        ) / 10
+      : 0;
   // Aggregate recommendations across districts to surface programmatic channels
   const recommendationCounts: Record<string, number> = {};
   (districtAnalytics || []).forEach((d) => {
@@ -698,9 +721,6 @@ const AnalyticsPage = () => {
       <header className="analytics-header">
         <div>
           <h1>Rwanda Nutrition Analytics</h1>
-          <p>
-            Mock monitoring data for malnutrition indicators across districts.
-          </p>
         </div>
         {/* Lightweight analytics widgets (non-intrusive) */}
         <div className="header-analytics-widgets" aria-hidden={false}>
@@ -732,15 +752,23 @@ const AnalyticsPage = () => {
         <div className="header-stats">
           <div>
             <span className="label">Children Screened (YTD)</span>
-            <strong>612,200</strong>
+            <strong>
+              {totalChildrenMeasured
+                ? totalChildrenMeasured.toLocaleString()
+                : "—"}
+            </strong>
           </div>
           <div>
             <span className="label">SAM Admissions</span>
-            <strong>14,830</strong>
+            <strong>
+              {totalSamAdmissions ? totalSamAdmissions.toLocaleString() : "—"}
+            </strong>
           </div>
           <div>
             <span className="label">Therapeutic Completion</span>
-            <strong>67%</strong>
+            <strong>
+              {therapeuticCompletionPct ? `${therapeuticCompletionPct}%` : "—"}
+            </strong>
           </div>
         </div>
       </header>
