@@ -2,8 +2,6 @@ import "../styles/navigation.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
-const ML_PREDICTION_URL = "https://nisr-hackthon-ak-p9n3.vercel.app/";
-
 function Navigation() {
   return (
     <nav className="navigation">
@@ -43,7 +41,13 @@ function Navigation() {
           <button
             className="nav-link ml-prediction-btn"
             onClick={() => {
-              const ev = new CustomEvent("open-ml-prediction-wait");
+              // Dispatch the ML prediction URL in the event detail so the
+              // ML redirect/wake component can target the correct API.
+              const ev = new CustomEvent("open-ml-prediction-wait", {
+                detail: {
+                  url: "https://mal-nutrition-fastapi.onrender.com/",
+                },
+              });
               window.dispatchEvent(ev);
             }}
           >
