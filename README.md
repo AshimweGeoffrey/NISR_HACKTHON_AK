@@ -15,43 +15,50 @@ Team AK (Ashimwe Geoffrey & Kamanzi Serge) created a full-stack, open-source sys
 - A Python ML model that predicts district malnutrition risk scores.
 - Policy brief templates and guidance tied to district analytics.
 
-## Transcript (Final — NISR Hackathon 2025)
+## Project
 
-🎤 Final Transcript — NISR Hackathon 2025 (Team AK: Ashimwe Geoffrey & Kamanzi Serge)
+This project combines data engineering, analytics, visualization, and machine learning to identify and predict areas at risk of child malnutrition (hidden hunger) at a district level in Rwanda. The goal is to provide actionable, localized insights for policymakers and program implementers so they can prioritize and tailor interventions.
 
-Track 2: Ending Hidden Hunger
+Key outcomes:
 
-[Opening — 0:00–0:20]
-Hello everyone, we are Team AK, made up of Ashimwe Geoffrey and Kamanzi Serge.
-For the NISR Hackathon 2025, we worked on Track 2: Ending Hidden Hunger — a challenge focused on addressing micronutrient deficiencies across Rwanda.
+- A geospatial hotspot map that highlights districts by malnutrition risk.
+- Per-district dashboards with nutrition indicators, socioeconomic context, and contributing factors.
+- A Python-based ML prediction model that outputs a risk score or category for districts.
+- Policy briefs and summary reports that translate analytics into interventions.
 
-[Problem Introduction — 0:20–0:45]
-Hidden hunger — or micronutrient deficiency — is a silent threat that weakens communities and limits development.
-Our mission was to use data and machine learning to map malnutrition hotspots, analyze root causes, and predict district-level malnutrition risk, so interventions can be better targeted and more effective.
+## Parts of the project
 
-[Solution Overview — 0:45–1:30]
-We built a district-level analytics platform combined with a machine learning prediction model.
-Our system identifies and visualizes malnutrition hotspots across Rwanda, providing detailed analytics for every district — including factors like household income, agricultural output, and school nutrition metrics.
+Below are the main folders and their responsibilities. Each can be explored and run independently for development or testing.
 
-The ML model, built with Python, predicts the malnutrition risk score for each district, allowing stakeholders to identify vulnerable zones early.
-The platform itself was developed with React (TypeScript/TSX), and we deployed it on Vercel for fast and stable web access.
+- `ml_model/`
 
-[Demonstration — 1:30–2:10]
-Here’s a quick look at our website:
-You can see the interactive hotspot map, where each district is color-coded based on malnutrition risk.
-Users can click any district to view its analytics dashboard — showing nutrition indicators, economic data, and contributing factors.
+  - Contains Jupyter notebook(s) used to train and evaluate the malnutrition prediction model.
+  - Includes preprocessing steps, feature selection experiments, model training, and evaluation metrics.
+  - Good starting point: open `ml_model/malnutrition_model.ipynb` in VS Code or Jupyter Lab.
 
-We’ll now run a sample test on our prediction model, which processes district-level data and instantly predicts the malnutrition risk category, helping guide future interventions and resource allocation.
+- `Nisr-Data_analysis/`
 
-[Impact & Policy Relevance — 2:10–2:40]
-By focusing on district-level analytics, we ensure that policy recommendations are localized, practical, and evidence-based.
-Our results support collaboration between health, agriculture, and education sectors, highlighting specific areas that need immediate attention.
-We also drafted policy briefs that summarize actionable steps each district can take.
+  - Data cleaning, exploratory data analysis (EDA), visualizations, and helper scripts used to prepare datasets for the dashboard and ML model.
+  - Contains documentation (`COMPREHENSIVE_DATA_ANALYTICS_SUMMARY.md`, `PROJECT_GUIDE.md`) and outputs used to inform the dashboards and policy briefs.
 
-[Closing — 2:40–3:00]
-Our entire project is open-source, and all datasets, analytics notebooks, and visualization tools are available in our GitHub repository.
-Team AK is committed to turning data into action — making hidden hunger visible, measurable, and ultimately, preventable.
-Thank you.
+- `nisr-frontend/`
+
+  - React application that hosts the analytics dashboards and the geospatial hotspot map.
+  - Key features: district-level profiles, interactive map, charts, and exportable reports.
+  - Includes a small UX flow to warm up the ML prediction endpoint before redirecting users to predictions.
+
+- `react-web-prediction_model/`
+  - A focused React + TypeScript app that demonstrates the prediction model and provides controls to run sample predictions.
+  - Used for interactive demos and model explainability interfaces.
+
+## Team
+
+This project was developed by Team AK:
+
+- Ashimwe Geoffrey
+- Kamanzi Serge
+
+Both members contributed to data analysis, model development, frontend design, and deployment.
 
 ✅ Slide/Video Caption Summary
 
